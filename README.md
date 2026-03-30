@@ -1,59 +1,317 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🚀 PHP Laravel 12 - Eloquent Status Enum Task Manager
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This project demonstrates how to use **Laravel 12 Enums with Eloquent Model Casting** to manage task statuses in a clean and maintainable way.
 
-## About Laravel
+The application is a **Task Management Dashboard** where users can:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+* Create tasks
+* Update task status dynamically
+* Delete tasks
+* Manage statuses using **PHP Enums**
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+The UI is built using **Tailwind CSS** to provide a modern dashboard experience.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+# ✨ Features
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+* ✅ Task Creation
+* ✅ Task Status Management
+* ✅ Status Update with Dropdown
+* ✅ Delete Tasks
+* ✅ PHP Enum Integration
+* ✅ Eloquent Enum Casting
+* ✅ Clean Tailwind Dashboard
+* ✅ Laravel 12 Compatible
+* ✅ Modern UI/UX
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+# 🛠 Tech Stack
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+| Technology | Description                  |
+| ---------- | ---------------------------- |
+| Framework  | Laravel 12                   |
+| Language   | PHP 8.2+                     |
+| Database   | MySQL / SQLite               |
+| Frontend   | Blade                        |
+| Styling    | Tailwind CSS                 |
+| Concept    | PHP Enums + Eloquent Casting |
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+# 📦 Project Installation
 
-## Contributing
+Follow these steps to run the project locally.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+# 1️⃣ Clone the Repository
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+composer create-project laravel/laravel PHP_Laravel12_Eloquent_Status
+cd PHP_Laravel12_Eloquent_Status
+```
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# 2️⃣ Install Dependencies
 
-## License
+```bash
+composer install
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+# 3️⃣ Setup Environment
+
+```bash
+cp .env.example .env
+```
+
+---
+
+# 4️⃣ Configure Database
+
+Open `.env` file and set your database credentials.
+
+Example:
+
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=task_manager
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+---
+
+# 5️⃣ Run Migration
+
+```bash
+php artisan migrate
+```
+
+This will create the **tasks table**.
+
+---
+
+# 6️⃣ Run Application
+
+```bash
+php artisan serve
+```
+
+Now open your browser:
+
+```
+http://127.0.0.1:8000
+```
+
+---
+
+# 📂 Project Structure
+
+```
+app
+ ├── Enums
+ │    └── TaskStatus.php
+ │
+ ├── Models
+ │    └── Task.php
+ │
+ ├── Http
+ │    └── Controllers
+ │         └── TaskController.php
+
+database
+ └── migrations
+      └── create_tasks_table.php
+
+resources
+ └── views
+      └── tasks
+           └── index.blade.php
+
+routes
+ └── web.php
+```
+
+---
+
+# 🧠 Core Concepts Used
+
+## 1️⃣ PHP Enum
+
+Enums define fixed values for task status.
+
+File:
+
+```
+app/Enums/TaskStatus.php
+```
+
+```php
+enum TaskStatus: string
+{
+    case PENDING = 'pending';
+    case IN_PROGRESS = 'in_progress';
+    case COMPLETED = 'completed';
+}
+```
+
+---
+
+# 2️⃣ Eloquent Enum Casting
+
+Laravel automatically converts database values into **Enum objects**.
+
+File:
+
+```
+app/Models/Task.php
+```
+
+```php
+protected $casts = [
+    'status' => TaskStatus::class
+];
+```
+
+This means:
+
+Database value
+`pending`
+
+Becomes
+
+```
+TaskStatus::PENDING
+```
+
+inside Laravel.
+
+---
+
+# 3️⃣ Task CRUD Controller
+
+File:
+
+```
+app/Http/Controllers/TaskController.php
+```
+
+Controller handles:
+
+* Listing tasks
+* Creating tasks
+* Updating status
+* Deleting tasks
+
+---
+
+# 4️⃣ Routes
+
+File:
+
+```
+routes/web.php
+```
+
+```php
+Route::get('/', [TaskController::class, 'index'])->name('tasks.index');
+Route::post('/tasks', [TaskController::class, 'store'])->name('tasks.store');
+Route::patch('/tasks/{task}', [TaskController::class, 'update'])->name('tasks.update');
+Route::delete('/tasks/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy');
+```
+
+---
+
+# 🖥️ Dashboard UI
+
+The dashboard includes:
+
+### Create Task Form
+
+Users can quickly create tasks.
+
+### Task Table
+
+Displays all tasks with:
+
+* Title
+* Status Dropdown
+* Delete Button
+
+### Status Colors
+
+| Status      | Color |
+| ----------- | ----- |
+| Pending     | Amber |
+| In Progress | Blue  |
+| Completed   | Green |
+
+---
+
+# 📸 UI Preview
+
+Dashboard contains:
+
+* Task creation form
+* Status dropdown selector
+* Delete action button
+* Responsive table layout
+
+---
+
+# 🔥 Why Use Enums?
+
+Enums make your code:
+
+* Safer
+* More readable
+* Less error-prone
+
+Instead of using strings like:
+
+```
+"pending"
+"in_progress"
+"completed"
+```
+
+You use:
+
+```
+TaskStatus::PENDING
+TaskStatus::IN_PROGRESS
+TaskStatus::COMPLETED
+```
+
+---
+
+# 🚀 Future Improvements
+
+Possible features to add:
+
+* Task Due Dates
+* Task Priority
+* User Authentication
+* Task Assignments
+* REST API version
+* Pagination
+* Search tasks
+* Export to Excel
+
+---
+
+# Output
+<img width="761" height="368" alt="image" src="https://github.com/user-attachments/assets/3ae20654-dc89-45f9-8a9f-ef2d6dc3cd04" />
+
+---
+
+# ⭐ Support
+
+If you like this project, please **give it a star on GitHub** ⭐
